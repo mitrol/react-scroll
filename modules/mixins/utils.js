@@ -30,7 +30,9 @@ const scrollOffset = (c, t) =>
     ? t.getBoundingClientRect().top + (window.scrollY || window.pageYOffset)
     : getComputedStyle(c).position === "relative"
       ? t.offsetTop
-      : t.getBoundingClientRect().top + c.scrollTop;
+      : t.getBoundingClientRect().top +
+        c.scrollTop -
+        c.getBoundingClientRect().top;
 
 export default {
   pushHash,

@@ -56,8 +56,8 @@ export default {
 
     props.absolute = true;
 
-    let scrollOffset =
-      utils.scrollOffset(containerElement, target) + (props.offset || 0);
+    let offset = props.offset === undefined ? 0 : props.offset;
+    let scrollOffset = utils.scrollOffset(containerElement, target) + offset;
 
     /*
        * if animate is not provided just scroll into the view
